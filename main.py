@@ -1531,4 +1531,5 @@ def callback_handler(call):
 
 print("🚀 TPP Shop Bot is Running with Dynamic Config, UI Editors & Premium Emojis!")
 bot.set_my_commands([BotCommand("start", "Start")])
-bot.infinity_polling(skip_pending=True, remove_webhook=True)
+bot.remove_webhook()
+bot.infinity_polling(skip_pending=True)
