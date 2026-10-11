@@ -518,7 +518,7 @@ def start_handler(message):
     if is_new_user and referrer_id and referrer_id != chat_id and referrer_id in db["users"]:
         db["users"][referrer_id]["balance"] += 0.0
         save_db()
-        try: bot.send_message(referrer_id, f'<tg-emoji emoji-id="{EMOJI["sparkle"]}">✨</tg-emoji> <b>New Referral Bonus!</b>\nআপনার লিংকে একজন জয়েন করেছে। <tg-emoji emoji-id="{EMOJI["money"]}">💰</tg-emoji> 5 BDT ({5/db["settings"]["dollarRate"]:.2f} USD) যোগ হয়েছে।')
+        try: bot.send_message(referrer_id, f'<tg-emoji emoji-id="{EMOJI["sparkle"]}">✨</tg-emoji> <b>New Referral Bonus!</b>\nআপনার লিংকে একজন জয়েন করেছে। <tg-emoji emoji-id="{EMOJI["money"]}">💰</tg-emoji> 0 BDT ({5/db["settings"]["dollarRate"]:.2f} USD) যোগ হয়েছে।')
         except: pass
 
     unjoined = get_unjoined_channels(chat_id)
