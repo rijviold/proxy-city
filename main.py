@@ -84,7 +84,7 @@ db = {
     "users": {}, "products": {}, "deposits": [], "orders": [],
     "usedTxnIds": [], "pendingOrders": [], "validMails": [], "vouchers": {},
     "settings": {
-        "bot_name": "TPP Shop Bot",
+        "bot_name": "New Proxy Market",
         "welcome_msg": '<tg-emoji emoji-id="6266995104687330978">✨</tg-emoji> <b>Welcome to {bot_name}</b>\n━━━━━━━━━━━━━━━━━━\n<tg-emoji emoji-id="6267068789146260253">💰</tg-emoji> Balance: <b>{bal:.2f} BDT / {usdt:.4f} USDT</b>\n━━━━━━━━━━━━━━━━━━\n<tg-emoji emoji-id="6267172559851099903">📌</tg-emoji> <i>নিচের মেনু থেকে আপনার প্রয়োজনীয় সার্ভিসটি বেছে নিন 👇</i>',
         "ui_overrides": {},
         "category_visibility": {"hotmail": True, "outlook": True, "froutlook": True, "vpn": True, "proxy": True, "custom": True},
@@ -532,7 +532,7 @@ def start_handler(message):
     bot_name = db["settings"].get("bot_name", "New Proxy Market")
     msg_template = db["settings"].get("welcome_msg", "👋 <b>{bot_name}</b>\n\n💰 Balance: <b>{bal:.2f} BDT / {usdt:.4f} USDT</b>")
     try: msg = msg_template.format(bot_name=bot_name, bal=u["balance"], usdt=usdt_bal)
-    except: msg = f"👋 <b>{bot_name}</b>\n\n💰 Balance: <b>{u['balance']:.2f} BDT / {usdt_bal:.4f} USDT</b>"
+    except: msg = f"👋 <b>{bot_name}</b>\n\n💰 Balance: <b>{u['balance']:.2f} BDT / {usdt_bal:.0f} USDT</b>"
 
     bot.send_message(chat_id, msg, reply_markup=user_menu(chat_id))
 
