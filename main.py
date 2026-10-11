@@ -516,7 +516,7 @@ def start_handler(message):
     if check_ban(chat_id): return
     
     if is_new_user and referrer_id and referrer_id != chat_id and referrer_id in db["users"]:
-        db["users"][referrer_id]["balance"] += 5.0
+        db["users"][referrer_id]["balance"] += 0.0
         save_db()
         try: bot.send_message(referrer_id, f'<tg-emoji emoji-id="{EMOJI["sparkle"]}">✨</tg-emoji> <b>New Referral Bonus!</b>\nআপনার লিংকে একজন জয়েন করেছে। <tg-emoji emoji-id="{EMOJI["money"]}">💰</tg-emoji> 5 BDT ({5/db["settings"]["dollarRate"]:.2f} USD) যোগ হয়েছে।')
         except: pass
