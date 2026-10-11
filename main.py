@@ -529,7 +529,7 @@ def start_handler(message):
     u = db["users"][chat_id]
     usdt_bal = u["balance"] / db["settings"]["dollarRate"]
     
-    bot_name = db["settings"].get("bot_name", "TPP Shop Bot")
+    bot_name = db["settings"].get("bot_name", "New Proxy Market")
     msg_template = db["settings"].get("welcome_msg", "👋 <b>{bot_name}</b>\n\n💰 Balance: <b>{bal:.2f} BDT / {usdt:.4f} USDT</b>")
     try: msg = msg_template.format(bot_name=bot_name, bal=u["balance"], usdt=usdt_bal)
     except: msg = f"👋 <b>{bot_name}</b>\n\n💰 Balance: <b>{u['balance']:.2f} BDT / {usdt_bal:.4f} USDT</b>"
